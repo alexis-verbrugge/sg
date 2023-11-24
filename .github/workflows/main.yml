@@ -49,9 +49,5 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker buildx build --platform linux/amd64,linux/arm64 -t kirinvbg/sg:latest --push .
-        docker push kirinvbg/sg:latest
-
-# echo "" | docker login -u kirinvbg --password-stdin
-# docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.REGISTRY_USERNAME}}/sg:latest .
-# docker push ${{secrets.REGISTRY_USERNAME}}/sg:latest
+        docker buildx build --platform linux/amd64,linux/arm64 -t ${{ secrets.REGISTRY_USERNAME }}/sg:latest --push .
+        docker push ${{ secrets.REGISTRY_USERNAME }}/sg:latest
